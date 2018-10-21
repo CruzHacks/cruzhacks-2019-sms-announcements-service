@@ -4,7 +4,8 @@
   "description": "SMS annoucnment service for CruzHacks 2019.",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/eslint --config ./config/.eslintrc.json",
+    "test": "./node_modules/.bin/jest --config=./config/jest.config.js",
+    "lint": "./node_modules/.bin/eslint --config ./config/.eslintrc.json",
     "format": "./node_modules/.bin/prettier",
     "ci": "bash .circleci/test_local.sh",
     "start": "node app.js"
