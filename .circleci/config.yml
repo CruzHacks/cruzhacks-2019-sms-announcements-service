@@ -1,20 +1,36 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/sms-ci
     docker:
       - image: node:10.12-stretch
     steps:
       - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install npm
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
   test:
     docker:
       - image: node:10.12-stretch
     steps:
       - checkout
+      - run:
+          name: Test
+          command: npm test
   lint:
     docker:
       - image: node:10.12-stretch
     steps:
       - checkout
+      - run:
+          name: Lint
+          command: npm lint
 
 workflows:
   version: 2
