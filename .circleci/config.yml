@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: node:10.12-stretch
+    steps:
+      - checkout
+  test:
+    docker:
+      - image: node:10.12-stretch
+    steps:
+      - checkout
+  lint:
+    docker:
+      - image: node:10.12-stretch
+    steps:
+      - checkout
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test
+      - lint

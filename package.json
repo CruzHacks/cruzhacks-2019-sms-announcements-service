@@ -4,7 +4,10 @@
   "description": "SMS annoucnment service for CruzHacks 2019.",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "./node_modules/.bin/eslint --config ./config/.eslintrc.json",
+    "format": "./node_modules/.bin/prettier",
+    "ci": "bash .circleci/test_local.sh",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +21,9 @@
   "homepage": "https://github.com/CruzHacks/cruzhacks-2019-sms-announcements-service#readme",
   "devDependencies": {
     "eslint": "^5.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "jest": "^23.6.0",
     "nodemon": "^1.18.4",
     "prettier": "^1.14.3"
