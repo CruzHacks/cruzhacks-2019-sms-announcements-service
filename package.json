@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/jest --config=./config/jest.config.js",
-    "lint": "./node_modules/.bin/eslint --config ./config/.eslintrc.json",
+    "lint": "./node_modules/.bin/eslint --config ./config/.eslintrc.json .",
     "format": "./node_modules/.bin/prettier",
     "ci": "bash .circleci/test_local.sh",
     "start": "node app.js"
@@ -22,15 +22,20 @@
   "homepage": "https://github.com/CruzHacks/cruzhacks-2019-sms-announcements-service#readme",
   "devDependencies": {
     "eslint": "^5.7.0",
+    "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.0",
     "jest": "^23.6.0",
     "nodemon": "^1.18.4",
     "prettier": "^1.14.3"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "eslint-plugin-react": "^7.11.1",
     "express": "^4.16.4",
     "pg": "^7.5.0",
     "pg-hstore": "^2.3.2",
