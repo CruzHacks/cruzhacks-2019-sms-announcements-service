@@ -8,7 +8,8 @@
     "lint": "./node_modules/.bin/eslint --config ./config/.eslintrc.json .",
     "format": "./node_modules/.bin/prettier",
     "ci": "bash .circleci/test_local.sh",
-    "start": "node app.js"
+    "start-prod": "node app.js",
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
