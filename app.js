@@ -27,8 +27,14 @@ app.get("/api/", (req, res) => {
 });
 
 app.post("/api/", (req, res) => {
-  console.log(req.body);
-  res.json(req.body);
+  res.json({
+    code: 200,
+    method: "POST",
+    error: false,
+    timestamp: new Date().toISOString(),
+    request: req.body,
+    message: "Text Sent"
+  });
 });
 
 app.listen(PORT, () => {
@@ -40,5 +46,5 @@ app.listen(PORT, () => {
 
   console.log(`Service Listening On Port ${metaData.port}`);
   console.log(`Enviorment Data: ${JSON.stringify(metaData, null, 2)}`);
-  console.log("\n API Launched Successfully");
+  console.log("\nAPI Launched Successfully");
 });
